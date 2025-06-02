@@ -473,8 +473,22 @@ const CheckoutPage: React.FC = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [cart, navigate, isProcessing]);
 
+useEffect(()=>{
+  if (!window.paypal){
+    const script=document.createElement('script');
+    script.src='https://www.paypal.com/sdk/js?client-id=AfoIUhq3sOvyPPZnxhmEXp6drbQJZeDlzL2Sk6DiLIojdAR-c3MfFQftaspE5KvWAfe95KF10IJZy9jg&currency=USD';
+    script.async=true;
+    document.body.appendChild(script);
+  }
+},[]);
+}
+
+
+  
   useEffect(() => {
-    if (window.paypal && cart.length > 0) {
+    if (window.paypal && cart.length > 0 && !isProcessing) {
+      const container= document.getElementById('paypal-button-container');
+      if (container) container.innerHTML='';
       renderPayPalButton();  // <- this is your defined function
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
