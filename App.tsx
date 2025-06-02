@@ -541,6 +541,25 @@ useEffect(()=>{
           console.log("Transaction details:", details);
           console.log("PayPal order ID:",data.orderID);
         const orderId = `HON-${Date.now()}`;
+
+    try{
+      await fetch('/api/serve',{
+        method:'POST',
+        headers: {'Content-Type':'application/json'},
+        body: JSON.stringify({
+        orderId,
+          name:formData.name,
+          email:formData.email,
+          address:formData.address,
+          total: getCartTotal(),
+          items:cart
+        })
+      });
+    }catch (err){
+      console.error("Failed to save order:"err);
+      
+    }
+        
         clearCart();
         setIsProcessing(false);
 
