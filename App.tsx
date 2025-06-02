@@ -1,4 +1,4 @@
-
+//amy react app components 
 import React, { useState, createContext, useContext, useEffect, /*..useCallback..*/ } from 'react';
 import { Routes, Route, Link, useParams } from 'react-router-dom';
 import { Product, CartItem, CartContextType } from './types';
