@@ -628,7 +628,7 @@ useEffect(()=>{
             </div>
             <div id="paypal-button-container" className="mt-8"></div>
 
-    <p className="text-xs text-gray-500 mt-2 text-center">You will be redirected to a confirmation page. This is a simulated payment.</p>
+    <p className="text-xs text-gray-500 mt-2 text-center">You will be redirected to a confirmation page.</p>
 </div>
 
             
