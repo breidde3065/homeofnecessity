@@ -481,7 +481,7 @@ useEffect(()=>{
     document.body.appendChild(script);
   }
 },[]);
-}
+
 
 
   
@@ -617,7 +617,7 @@ useEffect(()=>{
         </div>
       </div>
     
-    
+  );  
 };
 
 
